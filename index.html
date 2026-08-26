@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Primera Página Web</title>
+
+    <style>
+
+        /* =========================
+           ESTILOS GENERALES
+        ========================== */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+
+        /* =========================
+           MENÚ
+        ========================== */
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+
+        /* =========================
+           SECCIÓN PRINCIPAL
+        ========================== */
+
+        .inicio {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .inicio h2 {
+            font-size: 40px;
+            color: #1e3a8a;
+        }
+
+        .inicio p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        .boton {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           TARJETAS
+        ========================== */
+
+        .servicios {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contenedor-tarjetas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta {
+            background-color: white;
+            width: 250px;
+            padding: 30px;
+            border-radius: 10px;
+
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-10px);
+        }
+
+        .tarjeta h3 {
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           FORMULARIO
+        ========================== */
+
+        .contacto {
+            background-color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        input {
+            width: 250px;
+            padding: 12px;
+            margin: 10px;
+
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================== */
+
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MENÚ
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <h1>Mi Página Web</h1>
+
+            <div>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         INICIO
+    ========================== -->
+
+    <section class="inicio" id="inicio">
+
+        <h2>Bienvenido a mi página 👋</h2>
+
+        <p>
+            Esta página fue creada utilizando HTML, CSS y un poco de JavaScript.
+        </p>
+
+        <button class="boton" onclick="mostrarMensaje()">
+            Haz clic aquí
+        </button>
+
+        <p id="mensaje"></p>
+
+    </section>
+
+
+
+    <!-- =========================
+         SERVICIOS
+    ========================== -->
+
+    <section class="servicios" id="servicios">
+
+        <h2>¿Qué estamos aprendiendo?</h2>
+
+
+        <div class="contenedor-tarjetas">
+
+
+            <div class="tarjeta">
+
+                <h3>🏗️ HTML</h3>
+
+                <p>
+                    HTML se utiliza para crear la estructura
+                    de una página web.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>🎨 CSS</h3>
+
+                <p>
+                    CSS permite cambiar colores, tamaños,
+                    posiciones y estilos.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>⚡ JavaScript</h3>
+
+                <p>
+                    JavaScript permite agregar interacción
+                    a nuestra página.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section class="contacto" id="contacto">
+
+        <h2>Contacto</h2>
+
+        <p>Escribe tu nombre:</p>
+
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Escribe tu nombre"
+        >
+
+
+        <button
+            class="boton"
+            onclick="saludar()"
+        >
+            Enviar
+        </button>
+
+
+        <h3 id="respuesta"></h3>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Mi primera página web 🚀
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function mostrarMensaje() {
+
+            document.getElementById("mensaje").innerHTML =
+                "🎉 ¡Acabas de ejecutar una acción con JavaScript!";
+
+        }
+
+
+        function saludar() {
+
+            let nombre =
+                document.getElementById("nombre").value;
+
+
+            if (nombre == "") {
+
+                document.getElementById("respuesta").innerHTML =
+                    "⚠️ Primero escribe tu nombre";
+
+            }
+
+            else {
+
+                document.getElementById("respuesta").innerHTML =
+                    "👋 Hola " + nombre + ", bienvenido a la página.";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
