@@ -1,0 +1,47 @@
+.contenedor {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.contenedor-texto{
+    background-color: white;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 50px;
+}
+
+
+.contenedor-imagen{
+    background-color: green;
+}
+
+
+.contenedor-precio{
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.contenedor-precio h2{
+    color:#3d8168
+}
+
+
+.contenedor-precio p{
+    color:#75747a
+}
+
+
+
